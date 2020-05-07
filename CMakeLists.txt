@@ -300,6 +300,7 @@ add_subdirectory(snooks)
 add_subdirectory(TrackList)
 add_subdirectory(Wol)
 add_subdirectory(Xenakios)
+add_subdirectory(icalvo)
 
 # the langpack target must be included after all sources files are registered
 add_subdirectory(BuildUtils)

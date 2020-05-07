@@ -57,6 +57,7 @@
 #include "Wol/wol.h"
 #include "nofish/nofish.h"
 #include "snooks/snooks.h"
+#include "icalvo/IC.h"
 
 #define LOCALIZE_IMPORT_PREFIX "sws_"
 #ifdef LOCALIZE_IMPORT_PREFIX
@@ -663,6 +664,7 @@ error:
 				PadreExit();
 				SNM_Exit();
 				BR_Exit();
+				IC_Exit();
 			}
 			return 0; // makes REAPER unloading us
 		}
@@ -1250,6 +1252,8 @@ error:
 			ERR_RETURN("nofish init error.")
 		if (!snooks_Init())
 			ERR_RETURN("snooks init error.")
+		if (!IC_Init())
+			ERR_RETURN("icalvo init error.")
 		if (!SNM_Init(rec)) // keep it as the last init (for cycle actions)
 			ERR_RETURN("S&M init error.")
 
